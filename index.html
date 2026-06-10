@@ -841,7 +841,7 @@ function renderDayView() {
     }
   }
 
-  const hours = Array.from({length:19},(_,i)=>i+6); // 6..24
+  const hours = Array.from({length:24},(_,i)=>i); // 0..23
   html += hours.map(hr => {
     const lbl = hr === 0 ? '12am' : hr < 12 ? `${hr}am` : hr === 12 ? '12pm' : `${hr-12}pm`;
     const entries = (byHour[hr]||[]).sort((a,b)=>a.startMins-b.startMins);
